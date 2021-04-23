@@ -1,8 +1,8 @@
 import { Router } from 'express';
-//import userRoutes from './Users';
+import costumerRoutes from './Costumers';
 
 const app = Router();
 
-//app.use('/users', userRoutes);
+app.use('/costumers', costumerRoutes);
 
 export default app;

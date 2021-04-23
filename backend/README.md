@@ -12,6 +12,24 @@ Create a database in Postgres and udpate the <code>`ormconfig.ts`</code> file if
 ### 3️⃣ Start the Server
  Run `npm dev` command
 
+----------------
+
+## 🚚 API Rotes
+host: <code>http://localhost:3333</code>
+
+You can use the Insomnia to see the routes.
+Open Insomnia, and import the file in `/api_documentation` folder
+
+Costumers;
+*``Create /costumers (POST)``*
+
+*``List All: /costumers (GET)``*
+
+*``List By Id: /costumers/:id (GET)``*
+
+*``Update: /costumers/:id (PUT)``*
+
+*``Delete: /costumers/:id (DELETE)``*
 ---------------------------------
 ## 📚 Tools and Libraries used:
 ### body-parser
@@ -53,3 +71,7 @@ Run Migrations:
 --------------------
 ### reflect-metadata
 allow some annotations features used with TypeORM
+
+------------------------------------------
+## Useful links:
+😉 Emojis: https://emojipedia.org/check-mark/
