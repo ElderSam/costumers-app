@@ -10,8 +10,7 @@ Run `npm i` command
 Create a database in Postgres and udpate the <code>`ormconfig.ts`</code> file if necessary
 
 ### 3️⃣ Start the Server
- Run `npm start` command
-
+ Run `npm dev` command
 
 ---------------------------------
 ## 📚 Tools and Libraries used:
