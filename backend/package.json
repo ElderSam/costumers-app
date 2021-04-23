@@ -18,6 +18,7 @@
       "typeorm": "0.2.32"
    },
    "scripts": {
-      "dev": "npx nodemon --exec ts-node --files src/index.ts"
+      "dev": "npx nodemon --exec ts-node --files src/index.ts",
+      "typeorm": "npx ./node_modules/typeorm/cli.js"
    }
 }
