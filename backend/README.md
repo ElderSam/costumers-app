@@ -39,8 +39,7 @@ Documentation: https://typeorm.io/#/
 how to started a new project:
 https://typeorm.io/#/readme/step-by-step-guide
 
-how I started this project;
-``$ typeorm init --name MyProject --database postgres --express``
+NOTE: the option ``"synchronize": true`` inside the file ``ormconfig.json``, allows the automatic creation of tables when they do not exist, without the need to create migrations manually
 
 https://typeorm.io/#/select-query-builder/how-to-create-and-use-a-querybuilder
 Migrations: https://wanago.io/2019/01/28/typeorm-migrations-postgres/
@@ -51,6 +50,6 @@ how to create migrations:
 Run Migrations:
 `$ yarn typeorm migration:run`
 
-------------------------------------------
+--------------------
 ### reflect-metadata
 allow some annotations features used with TypeORM
