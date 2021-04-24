@@ -45,7 +45,11 @@ class CostumerController {
             return res.status(409).send({ error: 'Já existe um Cliente com este CPF' }); // status 409: conflict
         }
 
-        const newCostumer = await Costumer.insert(costumer);
+        const newCostumer: any = await Costumer.insert(costumer);
+
+        if(newCostumer.error) {
+            return res.status(400).send(newCostumer);
+        }
 
         return res.json(newCostumer);
     }

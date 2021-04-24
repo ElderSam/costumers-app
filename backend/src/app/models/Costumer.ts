@@ -82,11 +82,15 @@ class Costumer {
 
     static async insert(costumer: CostumerInterface) {
         repository = getRepository(Costumer);
+        try {
+            await repository.save(costumer); // save on Database
 
-        await repository.save(costumer); // save on Database
+            const auxCostumer = repository.create(costumer); // save on Database
+            return await repository.save(auxCostumer);
 
-        const auxCostumer = repository.create(costumer); // save on Database
-        return await repository.save(auxCostumer);
+        } catch ({ name, message }) {
+            return { error: { name, message } } // error message
+        }
     }
 
     static async update(id: string, costumer: object) {
