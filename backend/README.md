@@ -9,12 +9,41 @@ Run `npm i` command
 ### 2️⃣ Setup database settings inside `ormconfig.json` file
 Create a database in Postgres and udpate the <code>`ormconfig.ts`</code> file if necessary
 
-### 3️⃣ Start the Server
+## 3️⃣ Configure the Enviroment Variables;
+Create `.env` and `.env.test` files in the root folder and set the DB_NAME, for example;
+	DB_NAME=costumers_app
+
+### 4️⃣ Start the Server
  Run `npm dev` command
 
 ----------------------
 ## Run Tests
 $ yarn test
+
+OBS: In ``package.json`` file the script for ``Windows``;
+    ``"test": "SET NODE_ENV=test& jest"``
+
+    If you are running in ``Linux/Mac``, you need to set;
+    ``"test": "NODE_ENV=test jest"``
+
+### To prevent PostgreSQL ERRORS, you must enter in PostgreSQL admin; 
+1. To create a user with permissions, run the SQL;
+<code>CREATE ROLE test WITH
+        LOGIN
+        SUPERUSER
+        CREATEDB
+        CREATEROLE
+        INHERIT
+        NOREPLICATION
+        CONNECTION LIMIT -1
+        PASSWORD 'xxxxxx';</code>
+
+2. Create a Database;
+<code>CREATE DATABASE "DB_test"
+        WITH 
+        OWNER = test
+        ENCODING = 'UTF8'
+        CONNECTION LIMIT = -1;</code>
 ----------------
 
 ## 🚚 API Rotes
@@ -82,20 +111,12 @@ Docs: https://jestjs.io/docs/en/getting-started.html
 1. Install Jest:
 ``$ yarn add jest -D``
 
-2. create config files:
-``$ yarn jest --init``
+2. Follow the tutorial:
+Configure to Typescript: https://dev.to/caiulucas/tests-with-jest-and-typeorm-4j1l
 
-3. Set the ``jest.config.js`` file;
-
-	bail: true,
-    ...
-	testMatch: [
-		"**/__tests__/**/*.test.ts?(x)"
-	],
+3. create config files:
+``$ npx ts-jest config:init``
 --------
 ------------------------------------------
 ## Useful links:
-Configure to Typescript & TypeORM: https://dev.to/caiulucas/tests-with-jest-and-typeorm-4j1l
-OR Configure to Typescript: https://sharklabs.com.br/testes-unitarios-com-nodejs-jest-typescript/
-
 😉 Emojis: https://emojipedia.org/check-mark/
