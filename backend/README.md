@@ -12,6 +12,9 @@ Create a database in Postgres and udpate the <code>`ormconfig.ts`</code> file if
 ### 3️⃣ Start the Server
  Run `npm dev` command
 
+----------------------
+## Run Tests
+$ yarn test
 ----------------
 
 ## 🚚 API Rotes
@@ -72,6 +75,27 @@ Run Migrations:
 ### reflect-metadata
 allow some annotations features used with TypeORM
 
+### Jest
+Jest is a JavaScript testing framework
+Docs: https://jestjs.io/docs/en/getting-started.html
+
+1. Install Jest:
+``$ yarn add jest -D``
+
+2. create config files:
+``$ yarn jest --init``
+
+3. Set the ``jest.config.js`` file;
+
+	bail: true,
+    ...
+	testMatch: [
+		"**/__tests__/**/*.test.ts?(x)"
+	],
+--------
 ------------------------------------------
 ## Useful links:
+Configure to Typescript & TypeORM: https://dev.to/caiulucas/tests-with-jest-and-typeorm-4j1l
+OR Configure to Typescript: https://sharklabs.com.br/testes-unitarios-com-nodejs-jest-typescript/
+
 😉 Emojis: https://emojipedia.org/check-mark/

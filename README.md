@@ -1,1 +1,1 @@
-# people-app
+# costumers-app
