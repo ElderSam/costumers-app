@@ -5,8 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "npx nodemon --exec ts-node --files src/index.ts --ignore __tests__",
-    "test": "SET NODE_ENV=test& jest --verbose",
-    "typeorm": "npx ts-node ./node_modules/typeorm/cli.js"
+    "typeorm": "npx ts-node ./node_modules/typeorm/cli.js",
+    "test": "SET NODE_ENV=test& jest --verbose"
   },
   "author": "ElderSam",
   "license": "MIT",

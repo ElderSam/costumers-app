@@ -9,7 +9,7 @@ if(process.env.NODE_ENV === "test") {
    TEST_ENV = { // properties to Test Enviroment
       "dropSchema": true, // So, let the dropSchema: true because this will delete your data after the tests.
       //"logging": false,
-      //"synchroize": true,
+      //"synchronize": true,
       //"migrationsRun": true, // migrationsRun: true to automatically run migrations before the tests.
    }
 }
@@ -21,6 +21,8 @@ module.exports = {
    "username": "postgres", //process.env.DB_USER,
    "password": "admin", //process.env.DB_PASS,
    "database": process.env.DB_NAME,
+
+   "synchronize": true,
    ...TEST_ENV,
 
    "entities": [

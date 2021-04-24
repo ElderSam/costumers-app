@@ -1,16 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column, getRepository, Repository, DeepPartial, CreateDateColumn, Timestamp } from 'typeorm';
-import { maritalStatusType } from './../types';
+import { maritalStatusType } from '../utils/types';
+import CostumerInterface from '../utils/CostumerInterface';
 
 let repository: Repository<Costumer>;
-
-interface CostumerInterface {
-    name: string,
-    birth_date: string,
-    marital_status: maritalStatusType,
-    CPF: string,
-    city: string,
-    country_state: string
-}
 
 @Entity('costumers')
 class Costumer {
