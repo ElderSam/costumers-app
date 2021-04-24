@@ -16,7 +16,7 @@ require("dotenv").config({
       {
         name: "Samuel",
         birth_date: "1997-02-15",
-        marital_status: 2,
+        marital_status: 1,
         CPF: "12345678901",
         city: "Campinas",
         country_state: "SP"
@@ -81,4 +81,29 @@ require("dotenv").config({
       //console.log(res)
       expect(res.length).toBe(2);  
     });
+})
+
+describe('Costumers: update', () => {
+  it('should update the marital status of a costumer', async() => {
+    const newStatus = 2; //married
+
+    let res: any = await Costumer.update('1', { marital_status: newStatus });
+    expect(res).toBeUndefined;
+
+    res = await Costumer.list('1');
+    expect(res.marital_status).toBe(newStatus);
+  });
+})
+
+describe('Costumers: delete', () => {
+  it('should delete a costumer', async() => {
+    let res: any = await Costumer.delete('1');
+    expect(res).toBeUndefined;
+
+    res = await Costumer.list('1');
+    expect(res).toBeUndefined;
+
+    res = await Costumer.list();
+    expect(res.length).toBe(1);
+  });
 })
