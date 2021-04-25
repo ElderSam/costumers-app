@@ -116,7 +116,12 @@ Configure to Typescript: https://dev.to/caiulucas/tests-with-jest-and-typeorm-4j
 
 3. create config files:
 ``$ npx ts-jest config:init``
---------
-------------------------------------------
+
+--------------
+### Supertest
+Simulates the Express layer, so we can make a request for an API.
+Tutorial: https://dev.to/vitordelfino/escrevendo-testes-com-jest-supertest-1ed
+
+--------------------------------------------------
 ## Useful links:
 😉 Emojis: https://emojipedia.org/check-mark/
