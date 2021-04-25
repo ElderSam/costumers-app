@@ -23,23 +23,27 @@ export default {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  // coverageDirectory: undefined,
+  coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
-  // coveragePathIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
-  // ],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    'src/tools',
+    'src/services',
+    'src/middlewares',
+  ],
 
   // Indicates which provider should be used to instrument code for coverage
   coverageProvider: "v8",
 
   // A list of reporter names that Jest uses when writing coverage reports
-  // coverageReporters: [
+  coverageReporters: [
   //   "json",
-  //   "text",
-  //   "lcov",
+    "text",
+    "lcov",
+    "html",
   //   "clover"
-  // ],
+  ],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: undefined,
@@ -84,7 +88,7 @@ export default {
   // moduleNameMapper: {},
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
-  // modulePathIgnorePatterns: [],
+  modulePathIgnorePatterns: ['dist', 'node_modules', 'coverage'],
 
   // Activates notifications for test results
   // notify: false,
@@ -147,6 +151,7 @@ export default {
 
   // The glob patterns Jest uses to detect test files
   testMatch: [
+    //'**/?(*.)+(spec|test).(js|ts|tsx)',
     "**/__tests__/**/*.test.ts?(x)",
     // '!**/__tests__/coverage/**',
     // '!**/__tests__/utils/**',
