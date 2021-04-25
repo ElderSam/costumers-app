@@ -1,5 +1,6 @@
 # Backend - Project Build with TypeORM, Node.js, Typescript, PostgreSQL & Express
-
+ ![check-code-coverage](https://img.shields.io/badge/code--coverage-93%25-brightgreen)
+ 
 ------------------
 ## Steps to run this project: 🚀
 
