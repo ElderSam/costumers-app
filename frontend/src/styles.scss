@@ -1,5 +1,6 @@
 body {
   color: #666;
+  background-color: lightgrey;
   letter-spacing: 1px;
   margin: 0;
   padding: 0;
@@ -94,9 +95,11 @@ h2 {
 
 .main-form {
   color: #222222;
+  background-color: white;
   font-size: 18px;
   width: 70%;
   margin: auto;
+  padding: 1rem;
 }
 
 .input-control {
