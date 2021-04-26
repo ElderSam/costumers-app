@@ -19,6 +19,16 @@ const CostumerProvider = (props) => {
         .catch((err) => console.warn(err));
     };
 
+    const Delete = (id) => {
+        CostumerAPI()
+        .delete(id)
+        .then((response) => {
+            console.log(response);
+            fetchCostumer()
+        })
+        .catch((err) => console.warn(err));
+    };
+
     useEffect(() => {
         fetchCostumer();
     }, []);
@@ -28,6 +38,7 @@ const CostumerProvider = (props) => {
         value={{
             loading,
             costumers,
+            Delete
         }}
         >
         {props.children}

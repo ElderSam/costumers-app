@@ -6,10 +6,10 @@ import Costumer from './Costumer';
 
 const CostumersList = () => {
   const appContext = useContext(CostumerContext);
-  const { loading, costumers } = appContext
+  const { loading, costumers, Delete } = appContext
 
   const handleRemoveCostumer = (id) => {
-    //setCostumers(costumers.filter((costumer) => costumer.id !== id));
+    Delete(id)
   };
 
   return (
