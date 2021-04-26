@@ -8,10 +8,10 @@ const Header = () => {
 
       <div className="links">
         <NavLink to="/" className="link" activeClassName="active" exact>
-          Costumers List
+          Lista de Clientes
         </NavLink>
         <NavLink to="/add" className="link" activeClassName="active">
-          Add Costumer
+          Adicionar Cliente
         </NavLink>
       </div>
     </header>
