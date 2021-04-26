@@ -1,10 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import useLocalStorage from '../hooks/useLocalStorage';
 import Header from '../components/Header';
 import AddCostumer from '../components/AddCostumer';
 import CostumersList from '../components/CostumersList';
+import EditCostumer from '../components/EditCostumer';
 
 const AppRouter = () => {
   const[costumers, setCostumers] = useLocalStorage('costumers', []);
@@ -28,6 +29,13 @@ const AppRouter = () => {
               )}
               path="/add"
             />
+            <Route
+              render={(props) => (
+                <EditCostumer {...props} costumers={costumers} setCostumers={setCostumers} />
+              )}
+              path="/edit/:id"
+            />
+            <Route component={() => <Redirect to="/" />} />
           </Switch>
         </div>
       </div>

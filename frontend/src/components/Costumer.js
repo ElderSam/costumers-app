@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Button } from "react-bootstrap"
+import { useHistory } from 'react-router-dom';
 
 import { formatToBrazilianDate, formatCPF, getMaritalStatusText } from './utils/index';
 import EditIcon from './icons/pencilSquare.svg';
@@ -15,6 +16,7 @@ const Costumer = ({
     country_state,
     handleRemoveCostumer
 }) => {
+    const history = useHistory();
 
     return (
         <Card style={{ width: '18rem' }} className="costumer">
@@ -27,11 +29,10 @@ const Costumer = ({
                     <div>CPF: {formatCPF(CPF)}</div>
                     <div>Cidade: {city}/{country_state}</div>
                 </div>
-                <Button variant="primary" title="editar">
+                <Button variant="primary" title="editar" onClick={() => history.push(`/edit/${id}`)}>
                     <img src={EditIcon} className="icon" alt="edit icon" />
                 </Button>{' '}
                 <Button variant="danger" title="excluir" onClick={() => handleRemoveCostumer(id)}>
-                    
                     <img src={DeleteIcon} className="icon" alt="delete icon" />
                 </Button>
             </Card.Body>
