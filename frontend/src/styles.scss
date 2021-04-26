@@ -67,6 +67,31 @@ h2 {
   border: 2px solid black;
 }
 
+.costumer-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.costumer {
+    margin: 10px;
+    width: 288px;
+    overflow: hidden;
+
+    .costumer-title {
+    font-weight: bold;
+    }
+
+    .costumer-details {
+    margin-bottom: 1rem;
+
+    & > div {
+        margin-bottom: 0.5rem;
+    }
+    }
+}
+
 .main-form {
   color: #222222;
   font-size: 18px;
@@ -118,6 +143,12 @@ button {
 .centered-message {
   width: 500px;
   margin: auto;
+}
+
+.message {
+    color: #0e1b1e;
+    font-size: 25px;
+    margin-left: 10px;
 }
 
 @media screen and (max-width: 400px) {

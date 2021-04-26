@@ -15,7 +15,13 @@ const AppRouter = () => {
         <Header />
         <div className="main-content">
           <Switch>
-            <Route component={CostumersList} path="/" exact={true} />
+            <Route
+              render={(props) => (
+                <CostumersList {...props} costumers={costumers} setCostumers={setCostumers} />
+              )}
+              path="/"
+              exact={true}
+            />
             <Route
               render={(props) => (
                 <AddCostumer {...props} costumers={costumers} setCostumers={setCostumers} />
