@@ -1,9 +1,10 @@
 import React from 'react';
 import CostumerForm from './CostumerForm';
 
-const AddCostumer = () => {
+const AddCostumer = ({ history, costumers, setCostumers }) => {
   const handleOnSubmit = (costumer) => {
-    console.log(costumer);
+    setCostumers([costumer, ...costumers]); // add new costumer
+    history.push('/');
   };
 
   return (

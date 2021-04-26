@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Col, Button } from 'react-bootstrap';
+import { v4 as uuidv4 } from 'uuid';
 
 import SelectOptions from './form/SelectOptions';
             
@@ -66,7 +67,7 @@ const [costumer, setCostumer] = useState({ // to store all the entered details
 
     if (allFieldsFilled) {
       const costumer = {
-        //id: uuidv4(),
+        id: uuidv4(),
         name,
         birth_date,
         marital_status,
