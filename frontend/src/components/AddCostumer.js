@@ -4,10 +4,11 @@ import CostumersContext from '../context/CostumersContext';
 import CostumerForm from './CostumerForm';
 
 const AddCostumer = ({ history }) => {
-  const { costumers, setCostumers } = useContext(CostumersContext);
+  //const {  } = useContext(CostumersContext);
 
   const handleOnSubmit = (costumer) => {
-    setCostumers([costumer, ...costumers]); // add new costumer
+    //setCostumers([costumer, ...costumers]); // add new costumer
+
     history.push('/');
   };
 

@@ -11,7 +11,7 @@ const EditCostumer = ({ history }) => {
 
   const handleOnSubmit = (costumer) => {
     const filteredCostumers = costumers.filter((costumer) => costumer.id !== id);
-    setCostumers([costumer, ...filteredCostumers]);
+    //setCostumers([costumer, ...filteredCostumers]);
     history.push('/');
   };
 

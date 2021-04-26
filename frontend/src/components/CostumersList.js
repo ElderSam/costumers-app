@@ -1,26 +1,29 @@
 import React, { useContext } from 'react';
 import _ from 'lodash';
 
-import CostumersContext from '../context/CostumersContext';
+import { CostumerContext } from '../context/index';
 import Costumer from './Costumer';
 
 const CostumersList = () => {
-  const { costumers, setCostumers } = useContext(CostumersContext);
+  const appContext = useContext(CostumerContext);
+  const { loading, costumers } = appContext
 
   const handleRemoveCostumer = (id) => {
-    setCostumers(costumers.filter((costumer) => costumer.id !== id));
+    //setCostumers(costumers.filter((costumer) => costumer.id !== id));
   };
 
   return (
     <React.Fragment>
       <div className="costumer-list">
-        {!_.isEmpty(costumers) ? (
+      {loading ? <h1 className="text-center">...carregando clientes</h1> :
+        !_.isEmpty(costumers) ? (
           costumers.map((costumer) => (
             <Costumer key={costumer.id} {...costumer} handleRemoveCostumer={handleRemoveCostumer} />
           ))
         ) : (
           <p className="message">Nenhum cliente cadastrado. Por favor adicione algum cliente.</p>
-        )}
+        )
+      }
       </div>
     </React.Fragment>
   );
