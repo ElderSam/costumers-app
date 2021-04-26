@@ -63,7 +63,7 @@ h2 {
   width: 50%;
   float: left;
   margin-bottom: 50px;
-  border: 2px solid black
+  border: 2px solid black;
 }
 
 .main-form {
@@ -77,13 +77,13 @@ h2 {
   border: 1px solid #ccc;
   color: #555555;
   background-color: #fff;
-  height: 46px;
-  font-size: 18px;
+  height: 40px;
+  font-size: 16px;
   line-height: 1.3333333;
   border-radius: 0;
   display: block;
-  margin-bottom: 30px;
-  padding: 10px;
+  margin-bottom: 25px;
+  padding: 9px;
   width: 100%;
 
   &:focus {
@@ -133,7 +133,6 @@ button {
       .link:link,
       .link:visited {
         margin: unset;
-
       }
     }
   }
