@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import _ from 'lodash';
+
+import CostumersContext from '../context/CostumersContext';
 import Costumer from './Costumer';
 
-const CostumersList = ({ costumers, setCostumers }) => {
+const CostumersList = () => {
+  const { costumers, setCostumers } = useContext(CostumersContext);
 
   const handleRemoveCostumer = (id) => {
     setCostumers(costumers.filter((costumer) => costumer.id !== id));

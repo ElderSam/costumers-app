@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import CostumersContext from '../context/CostumersContext';
 import CostumerForm from './CostumerForm';
 
-const AddCostumer = ({ history, costumers, setCostumers }) => {
+const AddCostumer = ({ history }) => {
+  const { costumers, setCostumers } = useContext(CostumersContext);
+
   const handleOnSubmit = (costumer) => {
     setCostumers([costumer, ...costumers]); // add new costumer
     history.push('/');

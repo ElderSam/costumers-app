@@ -1,8 +1,11 @@
-import React from 'react';
-import CostumerForm from './CostumerForm';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
-const EditCostumer = ({ history, costumers, setCostumers }) => {
+import CostumersContext from '../context/CostumersContext';
+import CostumerForm from './CostumerForm';
+
+const EditCostumer = ({ history }) => {
+  const { costumers, setCostumers } = useContext(CostumersContext);
   const { id } = useParams();
   const costumerToEdit = costumers.find((costumer) => costumer.id === id);
 
