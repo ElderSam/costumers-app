@@ -25,10 +25,15 @@ const CostumerForm = (props) => {
     const values = [name, birth_date, marital_status, CPF, city, country_state ];
     let errorMsg = '';
 
-    const allFieldsFilled = values.every((field) => {
+    let allFieldsFilled = values.every((field) => {
       const value = `${field}`.trim();
       return value !== '' && value !== '0';
     });
+
+    if(CPF.length !== 11) {
+      allFieldsFilled = false;
+      errorMsg = 'CPF inválido'
+    }
 
     if (allFieldsFilled) {
       const costumer = {
@@ -42,7 +47,8 @@ const CostumerForm = (props) => {
       };
       props.handleOnSubmit(costumer);
     } else {
-      errorMsg = 'Por favor preencha todos os campos'; // 'Please fill out all the fields.'
+      if(errorMsg === '')
+        errorMsg = 'Por favor preencha todos os campos'; // 'Please fill out all the fields.'
     }
     setErrorMsg(errorMsg);
   };
