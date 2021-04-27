@@ -1,18 +1,18 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
-import CostumersContext from '../context/CostumersContext';
+import { CostumerContext } from '../context/index';
 import CostumerForm from './CostumerForm';
 
 const EditCostumer = ({ history }) => {
-  const { costumers } = useContext(CostumersContext);
+  const appContext = useContext(CostumerContext);
+  const { costumers } = appContext;
+
   const { id } = useParams();
-  const costumerToEdit = costumers.find((costumer) => costumer.id === id);
+  const costumerToEdit = costumers.find((costumer) => costumer.id === parseInt(id));
 
   const handleOnSubmit = (costumer) => {
-    // const filteredCostumers = costumers.filter((costumer) => costumer.id !== id);
-    // setCostumers([costumer, ...filteredCostumers]);
-    history.push('/');
+    appContext.update(id, costumer, history);
   };
 
   return (

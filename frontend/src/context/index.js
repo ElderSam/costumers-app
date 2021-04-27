@@ -33,6 +33,24 @@ const CostumerProvider = (props) => {
         });
     };
 
+    const update = (id, data, history) => {
+
+        CostumerAPI().update(id, data)
+            .then((response) => {
+                console.log(response);
+                alert('atualizado com sucesso!')
+                history.push('/');
+                fetchCostumer()
+            })
+            .catch((err) => {
+                if(err.response) {
+                    console.log(err.response.data);
+                    alert('Erro na requisição')
+                }
+                console.warn(err)  
+            });
+    };
+
     const Delete = (id) => {
         CostumerAPI()
         .delete(id)
@@ -54,6 +72,7 @@ const CostumerProvider = (props) => {
             loading,
             costumers,
             create,
+            update,
             Delete
         }}
         >
