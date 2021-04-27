@@ -6,35 +6,30 @@ const CostumerProvider = (props) => {
     const [costumers, setCostumers] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const fetchCostumer = async () => {
-        CostumerAPI()
-        .fetchAll()
-        .then((response) => {
-            //console.log(response.data);
-            const { listCostumers } = response.data;
-            setCostumers(listCostumers);
-            setLoading(false);
-            //console.log(listCostumers);
-        })
-        .catch((err) => console.warn(err));
+    const fetchCostumer = () => {
+        CostumerAPI().fetchAll()
+            .then((response) => {
+                //console.log(response.data);
+                const { listCostumers } = response.data;
+                setCostumers(listCostumers);
+                setLoading(false);
+                //console.log(listCostumers);
+            })
+            .catch((err) => getReqError(err));
     };
 
-    const create = async(data, history) => {
-        await CostumerAPI()
-        .create(data)
-        .then((response) => {
-            //console.log(response);
-            alert('cadastrado com sucesso!')
-            history.push('/')
-            fetchCostumer()
-        })
-        .catch((err) => {
-            console.warn(err)
-        });
+    const create = (data, history) => {
+        CostumerAPI().create(data)
+            .then((response) => {
+                //console.log(response);
+                alert('cadastrado com sucesso!')
+                history.push('/')
+                fetchCostumer()
+            })
+            .catch((err) => getReqError(err));
     };
 
     const update = (id, data, history) => {
-
         CostumerAPI().update(id, data)
             .then((response) => {
                 console.log(response);
@@ -42,28 +37,30 @@ const CostumerProvider = (props) => {
                 history.push('/');
                 fetchCostumer()
             })
-            .catch((err) => {
-                if(err.response) {
-                    console.log(err.response.data);
-                    alert('Erro na requisição')
-                }
-                console.warn(err)  
-            });
+            .catch((err) => getReqError(err));
     };
 
     const Delete = (id) => {
-        CostumerAPI()
-        .delete(id)
-        .then((response) => {
-            //console.log(response);
-            alert('Excluído com sucesso!')
-            fetchCostumer()
-        })
-        .catch((err) => console.warn(err));
+        CostumerAPI().delete(id)
+            .then((response) => {
+                //console.log(response);
+                alert('Excluído com sucesso!')
+                fetchCostumer()
+            })
+            .catch((err) => getReqError(err));
     };
+
+    const getReqError = (err) => {
+        if(err.response) {
+            console.log(err.response.data);
+            alert('Erro na requisição')
+        }
+        console.warn(err) 
+    }
 
     useEffect(() => {
         fetchCostumer();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
