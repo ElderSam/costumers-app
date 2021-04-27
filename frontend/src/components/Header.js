@@ -1,16 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Header = () => {
-  return (
-    <header>
-      <p>Costumer Management App</p>
+import styles from './header.module.scss';
 
-      <div className="links">
-        <NavLink to="/" className="link" activeClassName="active" exact>
+const Header = () => {
+
+  return (
+    <header className={styles.header}>
+      <p>Costumer Management App</p>
+      <div className={styles.links}>
+        <NavLink to="/" className={styles.link} activeClassName={styles.active} exact>
           Lista de Clientes
         </NavLink>
-        <NavLink to="/add" className="link" activeClassName="active">
+        <NavLink to="/add" className={styles.link} activeClassName={styles.active}>
           Adicionar Cliente
         </NavLink>
       </div>

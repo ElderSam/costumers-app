@@ -3,6 +3,8 @@ import { Card, Button } from "react-bootstrap"
 import { useHistory } from 'react-router-dom';
 
 import { formatToBrazilianDate, formatCPF, getMaritalStatusText } from './utils/index';
+
+import styles from './costumer.module.scss';
 import EditIcon from './icons/pencilSquare.svg';
 import DeleteIcon from './icons/trash.svg';
 
@@ -19,10 +21,10 @@ const Costumer = ({
     const history = useHistory();
 
     return (
-        <Card style={{ width: '18rem' }} className="costumer">
+        <Card className={styles.costumer}>
             <Card.Body>
-                <Card.Title className="costumer-title">{name}</Card.Title>
-                <div className="costumer-details">
+                <Card.Title className={styles.costumerTitle}>{name}</Card.Title>
+                <div className={styles.costumerDetails}>
                     <div>Nome: {name}</div>
                     <div>Nascimento: {formatToBrazilianDate(birth_date)}</div>
                     <div>Estado Civil: {getMaritalStatusText(marital_status)}</div>
@@ -30,10 +32,10 @@ const Costumer = ({
                     <div>Cidade: {city}/{country_state}</div>
                 </div>
                 <Button variant="primary" title="editar" onClick={() => history.push(`/edit/${id}`)}>
-                    <img src={EditIcon} className="icon" alt="edit icon" />
+                    <img src={EditIcon} className={styles.icon} alt="edit icon" />
                 </Button>{' '}
                 <Button variant="danger" title="excluir" onClick={() => handleRemoveCostumer(id)}>
-                    <img src={DeleteIcon} className="icon" alt="delete icon" />
+                    <img src={DeleteIcon} className={styles.icon} alt="delete icon" />
                 </Button>
             </Card.Body>
         </Card>

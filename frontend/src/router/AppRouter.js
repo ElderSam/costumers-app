@@ -8,13 +8,15 @@ import AddCostumer from '../components/AddCostumer';
 import CostumersList from '../components/CostumersList';
 import EditCostumer from '../components/EditCostumer';
 
+import styles from './appRouter.module.scss';
+
 const AppRouter = () => {
 
   return (
     <BrowserRouter>
       <div>
         <Header />
-        <div className="main-content">
+        <div className={styles.mainContent}>
           <CostumerProvider>
             <Switch>
               <Route component={CostumersList} path="/" exact={true} />

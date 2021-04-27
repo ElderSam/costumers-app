@@ -1,0 +1,17 @@
+.costumer-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.centered-message {
+  width: 500px;
+  margin: auto;
+}
+
+.message {
+    color: #0e1b1e;
+    font-size: 25px;
+    margin-left: 10px;
+}

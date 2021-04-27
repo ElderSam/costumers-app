@@ -1,0 +1,17 @@
+.costumer {
+    width: 18rem;
+    margin: 10px;
+    overflow: hidden;
+
+    .costumer-title {
+    font-weight: bold;
+    }
+
+    .costumer-details {
+    margin-bottom: 1rem;
+
+    & > div {
+        margin-bottom: 0.5rem;
+    }
+    }
+}

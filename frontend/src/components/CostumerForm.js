@@ -5,6 +5,8 @@ import {
   marital_status_OPTIONS, country_state_OPTIONS } from './form/OptionValues';
 import SelectOptions from './form/SelectOptions';
 
+import styles from './costumerForm.module.scss';
+
 const CostumerForm = (props) => {
 
   const [costumer, setCostumer] = useState({ // to store all the entered details
@@ -63,15 +65,15 @@ const CostumerForm = (props) => {
   };
 
   return (
-    <div className="main-form">
+    <div className={styles.mainForm}>
       <h3>Formulário de Cliente</h3>
-      {errorMsg && <p className="errorMsg">{errorMsg}</p>}
+      {errorMsg && <p className={styles.errorMsg}>{errorMsg}</p>}
       <Form onSubmit={handleOnSubmit}>
 
         <Form.Group controlId="name">
           <Form.Label>Nome</Form.Label>
           <Form.Control
-            className="input-control"
+            className={styles.inputControl}
             type="text"
             name="name"
             value={name}
@@ -83,7 +85,7 @@ const CostumerForm = (props) => {
         <Form.Group controlId="marital_status">
           <Form.Label>Estado Civil</Form.Label>
           <Form.Control
-            className="input-control"
+            className={styles.inputControl}
             as="select"
             name="marital_status"
             value={marital_status}
@@ -99,7 +101,7 @@ const CostumerForm = (props) => {
         <Form.Group controlId="CPF">
           <Form.Label>CPF</Form.Label>
           <Form.Control
-            className="input-control"
+            className={styles.inputControl}
             type="number"
             name="CPF"
             value={CPF}
@@ -114,7 +116,7 @@ const CostumerForm = (props) => {
             <Form.Group controlId="city">
               <Form.Label>Cidade</Form.Label>
               <Form.Control
-                className="input-control"
+                className={styles.inputControl}
                 type="text"
                 name="city"
                 value={city}
@@ -127,7 +129,7 @@ const CostumerForm = (props) => {
             <Form.Group controlId="country_state">
               <Form.Label>Estado</Form.Label>
               <Form.Control
-                className="input-control"
+                className={styles.inputControl}
                 as="select"
                 name="country_state"
                 value={country_state}
@@ -142,10 +144,10 @@ const CostumerForm = (props) => {
           </Col>
         </Form.Row>
 
-        <Form.Group controlId="birth_date">
+        <Form.Group id={styles.birthDate} controlId="birth_date">
           <Form.Label>Data de Nascimento</Form.Label>
           <Form.Control
-            className="input-control"
+            className={styles.inputControl}
             type="date"
             name="birth_date"
             value={birth_date}
@@ -155,7 +157,7 @@ const CostumerForm = (props) => {
           </Form.Control>
         </Form.Group>
 
-        <Button variant="primary" type="submit" className="submit-btn">
+        <Button variant="primary" type="submit" className={styles.submitBtn}>
           Enviar
         </Button>
       </Form>
