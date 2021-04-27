@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Form, Col, Button } from 'react-bootstrap';
-import { v4 as uuidv4 } from 'uuid';
 
 import {
   marital_status_OPTIONS, country_state_OPTIONS } from './form/OptionValues';
@@ -37,7 +36,6 @@ const CostumerForm = (props) => {
 
     if (allFieldsFilled) {
       const costumer = {
-        id: uuidv4(),
         name,
         birth_date,
         marital_status,

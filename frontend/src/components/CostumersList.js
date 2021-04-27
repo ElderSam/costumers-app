@@ -6,10 +6,10 @@ import Costumer from './Costumer';
 
 const CostumersList = () => {
   const appContext = useContext(CostumerContext);
-  const { loading, costumers, Delete } = appContext
+  const { loading, costumers } = appContext
 
   const handleRemoveCostumer = (id) => {
-    Delete(id)
+    appContext.Delete(id)
   };
 
   return (

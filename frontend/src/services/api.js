@@ -8,6 +8,7 @@ const CostumerAPI = (url = baseUrl + 'costumers/') => {
     return {
         fetchAll: () => axios.get(url),
         fetchById: id => axios.get(url + id),
+        create: newRecord => axios.post(url, newRecord),
         delete: id => axios.delete(url + id)
     }
 }

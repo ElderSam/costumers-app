@@ -5,13 +5,13 @@ import CostumersContext from '../context/CostumersContext';
 import CostumerForm from './CostumerForm';
 
 const EditCostumer = ({ history }) => {
-  const { costumers, setCostumers } = useContext(CostumersContext);
+  const { costumers } = useContext(CostumersContext);
   const { id } = useParams();
   const costumerToEdit = costumers.find((costumer) => costumer.id === id);
 
   const handleOnSubmit = (costumer) => {
-    const filteredCostumers = costumers.filter((costumer) => costumer.id !== id);
-    //setCostumers([costumer, ...filteredCostumers]);
+    // const filteredCostumers = costumers.filter((costumer) => costumer.id !== id);
+    // setCostumers([costumer, ...filteredCostumers]);
     history.push('/');
   };
 

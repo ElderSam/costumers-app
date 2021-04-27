@@ -1,15 +1,13 @@
 import React, { useContext } from 'react';
 
-import CostumersContext from '../context/CostumersContext';
+import { CostumerContext } from '../context/index';
 import CostumerForm from './CostumerForm';
 
 const AddCostumer = ({ history }) => {
-  //const {  } = useContext(CostumersContext);
+  const appContext = useContext(CostumerContext);
 
-  const handleOnSubmit = (costumer) => {
-    //setCostumers([costumer, ...costumers]); // add new costumer
-
-    history.push('/');
+  const handleOnSubmit = async(costumer) => {
+    appContext.create(costumer, history) // add new costumer
   };
 
   return (

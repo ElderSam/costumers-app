@@ -10,20 +10,35 @@ const CostumerProvider = (props) => {
         CostumerAPI()
         .fetchAll()
         .then((response) => {
-            console.log(response.data);
+            //console.log(response.data);
             const { listCostumers } = response.data;
             setCostumers(listCostumers);
             setLoading(false);
-            console.log(listCostumers);
+            //console.log(listCostumers);
         })
         .catch((err) => console.warn(err));
+    };
+
+    const create = async(data, history) => {
+        await CostumerAPI()
+        .create(data)
+        .then((response) => {
+            //console.log(response);
+            alert('cadastrado com sucesso!')
+            history.push('/')
+            fetchCostumer()
+        })
+        .catch((err) => {
+            console.warn(err)
+        });
     };
 
     const Delete = (id) => {
         CostumerAPI()
         .delete(id)
         .then((response) => {
-            console.log(response);
+            //console.log(response);
+            alert('Excluído com sucesso!')
             fetchCostumer()
         })
         .catch((err) => console.warn(err));
@@ -38,6 +53,7 @@ const CostumerProvider = (props) => {
         value={{
             loading,
             costumers,
+            create,
             Delete
         }}
         >
