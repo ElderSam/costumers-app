@@ -52,8 +52,9 @@ const CostumerProvider = (props) => {
 
     const getReqError = (err) => {
         if(err.response) {
-            console.log(err.response.data);
-            alert('Erro na requisição')
+            const { data } = err.response;
+            console.log(data);
+            alert(`Erro na requisição: ${data.error}`)
         }
         console.warn(err) 
     }
